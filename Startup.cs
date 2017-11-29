@@ -44,6 +44,10 @@ namespace students
 
             app.UseStaticFiles();
 
+            app.UseCors(options =>
+                options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials()
+            );
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
